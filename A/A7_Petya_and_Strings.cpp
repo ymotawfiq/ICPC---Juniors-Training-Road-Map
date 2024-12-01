@@ -1,7 +1,7 @@
 
 
 /*
-problem link ----> https://codeforces.com/contest/405/problem/A
+problem link ----> https://codeforces.com/contest/112/problem/A
 */
 
 
