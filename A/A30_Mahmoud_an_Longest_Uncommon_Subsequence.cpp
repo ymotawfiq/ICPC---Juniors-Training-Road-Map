@@ -10,10 +10,6 @@ problem link ----> https://codeforces.com/contest/766/problem/A
 
 using namespace std;
 
-struct stDistance{
-    int min, max;
-};
-
 int main(){
 
     int c1 = 0, c2 = 0, l1= 0, l2 = 0;

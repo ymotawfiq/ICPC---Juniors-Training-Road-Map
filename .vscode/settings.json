@@ -5,6 +5,11 @@
         "unordered_map": "cpp",
         "vector": "cpp",
         "map": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp",
+        "ostream": "cpp",
+        "utility": "cpp"
     }
 }
