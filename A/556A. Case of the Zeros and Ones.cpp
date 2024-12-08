@@ -21,5 +21,7 @@ int main(){
 
     cout<< n - (2 * min(c0, c1));
 
+    delete[] s;
+
     return 0;
 }
