@@ -54,6 +54,7 @@ int main(){
         cout<<"filesystem error: " << err.what() << '\n';
     }
 
+	cin.get();
 
     return 0;
 }
