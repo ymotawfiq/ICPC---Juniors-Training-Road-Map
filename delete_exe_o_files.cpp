@@ -46,6 +46,9 @@ int main(){
                 if(!removed){
                     cout<<"Failed to delete "<<v<<" file\n";
                 }
+                else{
+                    cout<<v<<" ---> ((removed successfully!))\n";
+                }
             }
         }
         cout<<"\n.EXE && .O files deleted successfully.\n";
