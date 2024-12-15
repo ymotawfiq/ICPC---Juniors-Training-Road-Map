@@ -25,6 +25,9 @@ vector<string> all_files(const string& path){
             ans.push_back(i.path().string());
         }
     }
+    for (const auto& i : filesystem::directory_iterator(path)){
+        ans.push_back(i.path().string());
+    }
     return ans;
 }
 
@@ -32,12 +35,12 @@ vector<string> all_files(const string& path){
 
 int main(){
 
-    string path = "D:\\My Code And Projects\\C++\\Dr Moustafa Saad Sheet";
+    string path = "D:\\My Code And Projects\\C++\\Problems";
 
     vector<string> files = all_files(path);
 
     try{
-        string thisFileExePath = "D:\\My Code And Projects\\C++\\Dr Moustafa Saad Sheet\\delete_exe_o_files.exe";
+        string thisFileExePath = "D:\\My Code And Projects\\C++\\Problems\\1_____delete_exe_o_files.exe";
         for(string& v : files){
             if(v == thisFileExePath)continue;
             filesystem::path filePath = v;
