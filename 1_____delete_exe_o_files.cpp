@@ -32,13 +32,7 @@ vector<string> all_files(const string& path){
 }
 
 void print_vector(const vector<string>& v){
-    cout<<"Files"<<endl;
-    cout<<"=============================================\n";
-    for(const string& c : v){
-        cout<<c<<endl;
-    }
-    cout<<"=============================================\n";
-    cout<<"Removed Successfully\n";
+    for(const string& c : v)cout<<c<<endl;
 }
 
 void delete_exe_and_o_files_from_path(const string& path){
@@ -66,7 +60,13 @@ void delete_exe_and_o_files_from_path(const string& path){
         cout<<"|No '.EXE' or '.O' Files found in this path|\n";
         cout<<" ------------------------------------------\n";
     }
-    else print_vector(deleted_files);
+    else {
+        cout<<"Files"<<endl;
+        cout<<"=============================================\n";
+        print_vector(deleted_files);
+        cout<<"=============================================\n";
+        cout<<"Removed Successfully\n";
+    }
 }
 
 int main(){
