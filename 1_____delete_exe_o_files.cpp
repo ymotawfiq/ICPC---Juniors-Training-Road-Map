@@ -31,34 +31,48 @@ vector<string> all_files(const string& path){
     return ans;
 }
 
+void print_vector(const vector<string>& v){
+    cout<<"Files"<<endl;
+    cout<<"=============================================\n";
+    for(const string& c : v){
+        cout<<c<<endl;
+    }
+    cout<<"=============================================\n";
+    cout<<"Removed Successfully\n";
+}
 
-
-int main(){
-
-    string path = "D:\\My Code And Projects\\C++\\Problems";
-
+void delete_exe_and_o_files_from_path(const string& path){
     vector<string> files = all_files(path);
-
+    vector<string> deleted_files;
     try{
         string thisFileExePath = "D:\\My Code And Projects\\C++\\Problems\\1_____delete_exe_o_files.exe";
         for(string& v : files){
             if(v == thisFileExePath)continue;
             filesystem::path filePath = v;
             if(filePath.extension() == ".exe" || filePath.extension() == ".o"){
+                int find = v.find_last_of("\\");
+                string file_name = v.substr(find + 1);
                 bool removed = filesystem::remove(filePath);
-                if(!removed){
-                    cout<<"Failed to delete "<<v<<" file\n";
-                }
-                else{
-                    cout<<v<<" ---> ((removed successfully!))\n";
-                }
+                if(!removed)cout<<"File ("<<file_name<<") Failed To Delete\n";
+                else deleted_files.push_back(file_name);
             }
         }
-        cout<<"\n.EXE && .O files deleted successfully.\n";
     }
     catch(const filesystem::filesystem_error& err){
         cout<<"filesystem error: " << err.what() << '\n';
+    }  
+    if(deleted_files.empty()){
+        cout<<" ------------------------------------------\n";
+        cout<<"|No '.EXE' or '.O' Files found in this path|\n";
+        cout<<" ------------------------------------------\n";
     }
+    else print_vector(deleted_files);
+}
+
+int main(){
+
+    string path = "D:\\My Code And Projects\\C++\\Problems";
+    delete_exe_and_o_files_from_path(path);
 
 	cin.get();
 
