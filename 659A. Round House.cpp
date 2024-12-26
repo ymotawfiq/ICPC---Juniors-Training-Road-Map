@@ -12,8 +12,6 @@ int main(){
 
     short n, a, b;
     cin>>n>>a>>b;
-    short* arr = new short[n+1]{0};
-    for(int i=1; i<=n; i++)arr[i] = i;
     short i = a;
     short n1 = abs(b);
     while(n1--){
@@ -22,7 +20,6 @@ int main(){
         if(i<1)i=n;
         else if(i==n+1)i=1;
     }
-    cout<<arr[i];
-    delete[] arr;
+    cout<<i;
     return 0;
 }
