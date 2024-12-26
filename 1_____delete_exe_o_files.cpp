@@ -39,7 +39,7 @@ void delete_exe_and_o_files_from_path(const string& path){
     vector<string> files = all_files(path);
     vector<string> deleted_files;
     try{
-        string thisFileExePath = "D:\\My Code And Projects\\C++\\Problems\\1_____delete_exe_o_files.exe";
+        string thisFileExePath = "D:\\Code\\Problems\\1_____delete_exe_o_files.exe";
         for(string& v : files){
             if(v == thisFileExePath)continue;
             filesystem::path filePath = v;
@@ -71,7 +71,7 @@ void delete_exe_and_o_files_from_path(const string& path){
 
 int main(){
 
-    string path = "D:\\My Code And Projects\\C++\\Problems";
+    string path = "D:\\Code\\Problems";
     delete_exe_and_o_files_from_path(path);
 
 	cin.get();
