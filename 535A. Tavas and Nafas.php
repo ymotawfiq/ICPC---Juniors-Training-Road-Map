@@ -1,4 +1,6 @@
+
 <?php
+// problem link --> https://codeforces.com/contest/535/problem/A
 
 $number = (int)readline();
 $numbersToNine = array("zero","one","two","three","four","five","six","seven","eight", "nine");
